@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>George Travel | Cab bookings</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="shell nav"><div class="brand"><span class="brand-icon">G</span><span>george<span class="brand-light">travel</span></span></div><span class="nav-label">TRAVEL MANAGEMENT</span></div></header>
+<main class="shell">
+  <section class="hero"><div><div class="eyebrow"><span class="dot"></span> YOUR JOURNEY STARTS HERE</div><h1>Better journeys,<br><em>booked in minutes.</em></h1><p>From the everyday to the extraordinary, get your customers where they need to be.</p></div><div class="hero-badge"><strong>01</strong><span>Simple booking.<br>Smarter travel.</span></div></section>
+  <div class="layout">
+    <section class="card booking-card">
+      <div class="card-heading"><div><div class="section-label">NEW RESERVATION</div><h2>Book a cab</h2><p>Enter the trip details to get started.</p></div><span class="number">01</span></div>
+      <form id="booking-form">
+        <label>Customer name<input id="customerName" maxlength="100" placeholder="e.g. Alex Morgan" required></label>
+        <div class="two-col"><label>Pickup location<input id="pickup" maxlength="200" placeholder="Where from?" required></label><label>Destination<input id="destination" maxlength="200" placeholder="Where to?" required></label></div>
+        <div class="two-col"><label>Distance (km)<input id="distanceKm" type="number" min="0.1" max="10000" step="0.01" placeholder="e.g. 12.5" required></label><label>Cab category<select id="cabType"><option value="STANDARD">Standard</option><option value="SUV">SUV</option><option value="LUXURY">Luxury</option></select></label></div>
+        <div class="actions"><button type="button" class="secondary" id="quote">Estimate fare <span>↗</span></button><button type="submit" class="primary" id="submit">Confirm booking <span>→</span></button></div>
+        <div id="message" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+    <aside><div class="card estimate"><div class="section-label">TRIP ESTIMATE</div><div class="estimate-icon">₹</div><h2>Your fare, upfront.</h2><p>Choose your cab and distance to see an estimated fare before you book.</p><div id="estimate" class="estimate-result">No estimate yet <span>—</span></div><div class="estimate-note">Fixed base fare + distance rate · INR</div></div><div class="support"><span>✦</span><div><strong>Made for smooth journeys</strong><p>Clear pricing. Easy reservations. All in one place.</p></div></div></aside>
+  </div>
+  <section class="card recent"><div class="card-heading"><div><div class="section-label">YOUR ACTIVITY</div><h2>Recent bookings</h2><p>A quick look at your latest journeys.</p></div><button id="refresh" class="refresh" type="button">↻ &nbsp; Refresh</button></div><div id="bookings" class="booking-list" aria-live="polite">Loading bookings...</div></section>
+</main>
+<footer class="shell"><span>© George Travel · Travel management, made simple.</span><span>BUILT FOR BETTER JOURNEYS</span></footer>
+<script src="/app.js"></script>
+</body>
+</html>
